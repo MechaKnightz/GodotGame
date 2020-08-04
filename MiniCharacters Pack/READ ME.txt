@@ -1,0 +1,7 @@
+Author: SirVerex
+This bundlepack is completely free to use in both personal and commercial projects (no credit required but appreciated).
+
+These models use texture coordinates to get their color! Turn off any texture interpolation
+If exporting to Unreal or Unity be sure to set texture filtering (compression) to 0. (Nearest)
+
+For Unity Users: When importing textures change compression to None, Filter Mode to Point (no filter) and Non-Power of 2 to None.
