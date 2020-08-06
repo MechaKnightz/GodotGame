@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Weapon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://RangedWeapon.gd" type="Script" id=2]
+
+[node name="RangedWeapon" instance=ExtResource( 1 )]
+script = ExtResource( 2 )
+
+[node name="ProjectileSpawnLocation" type="Spatial" parent="." index="1"]

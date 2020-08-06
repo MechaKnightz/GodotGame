@@ -1,18 +1,24 @@
 extends KinematicBody
-
 class_name Projectile
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 var velocity = Vector3()
+var time_lived = 0
 
-var SPEED = 12
-var ACCELERATION = 3
-var DEACCELERATION = 10
+export var SPEED = 30
+export var ACCELERATION = 10
+export var DEACCELERATION = 3
+export var TTL = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass # Replace with function body.
+
+func _process(delta):
+	time_lived += delta
+	if time_lived > TTL:
+		queue_free()
 
 func _physics_process(delta):
 	var dir = self.global_transform.basis.z

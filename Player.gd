@@ -10,19 +10,13 @@ var SPEED = 12
 var ACCELERATION = 3
 var DEACCELERATION = 10
 
-const Projectile = preload("res://Projectile.tscn")
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	camera = get_node("../CameraHolder/Camera").get_global_transform()
 
 func _process(delta):
 	if(Input.is_action_pressed("shoot")):
-		var proj = Projectile.instance()
-		print(self.rotation)
-		proj.translation += Vector3(0, 2, 0)
-		proj.rotation = self.rotation
-		add_child_below_node(self, proj)
+		$Pistol._use()
 
 func _physics_process(delta):
 	var dir = Vector3()

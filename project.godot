@@ -13,9 +13,15 @@ _global_script_classes=[ {
 "class": "Projectile",
 "language": "GDScript",
 "path": "res://Projectile.gd"
+}, {
+"base": "Spatial",
+"class": "Weapon",
+"language": "GDScript",
+"path": "res://Weapon.gd"
 } ]
 _global_script_class_icons={
-"Projectile": ""
+"Projectile": "",
+"Weapon": ""
 }
 
 [application]

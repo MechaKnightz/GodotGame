@@ -1,0 +1,26 @@
+extends Spatial
+class_name Weapon
+
+# Declare member variables here. Examples:
+export var weapon_name = "none"
+export var cooldown = 0
+var last_fired
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+func _use():
+	if last_fired == null:
+		last_fired = OS.get_system_time_msecs()
+		_fire()
+	elif last_fired + cooldown < OS.get_system_time_msecs():
+		last_fired = OS.get_system_time_msecs()
+		_fire()
+	pass
+
+func _fire():
+	pass
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
