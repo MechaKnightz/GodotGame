@@ -1,4 +1,4 @@
-[gd_scene load_steps=36 format=2]
+[gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://MiniCharacters Pack/fbx/Clothing.material" type="Material" id=1]
 [ext_resource path="res://Player.gd" type="Script" id=2]
@@ -8,7 +8,9 @@
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.35474
-height = 0.82677
+height = 0.872663
+
+[sub_resource type="RayShape" id=31]
 
 [sub_resource type="ArrayMesh" id=2]
 surfaces/0 = {
@@ -6410,9 +6412,13 @@ script = ExtResource( 2 )
 [node name="Pistol" parent="." instance=ExtResource( 5 )]
 transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.860785, 0.489434 )
 
-[node name="CollisionShape" type="CollisionShape" parent="."]
-transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.766461, 0 )
+[node name="CollisionCapsule" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.819969, 0 )
 shape = SubResource( 1 )
+
+[node name="CollisionRay" type="CollisionShape" parent="."]
+transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 2.16477, 0 )
+shape = SubResource( 31 )
 
 [node name="warrior" type="Skeleton" parent="."]
 transform = Transform( 7.49407, 0, 0, 0, 7.49407, -1.22094e-06, 0, 1.22094e-06, 7.49407, 0, 0, 0 )
@@ -6809,7 +6815,7 @@ transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00806241, 0 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.00429958, 0 )
 
 [node name="head_end_end" type="Spatial" parent="warrior/handIKL_end_end/elbowIKL_end_end/elbowIKR_end_end/handIKR_end_end/feetIKL_end_end/kneeIKL_end_end/feetIKR_end_end/kneeIKR_end_end/f_pinky02L_end_end/f_middle02L_end_end/f_index02L_end_end/thumb02L_end_end"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0643054, 0 )
+transform = Transform( 1, 0, 0, 0, 1, 1.42109e-14, 0, -1.42109e-14, 1, 0, 0.0643054, 0 )
 visible = false
 
 [node name="f_pinky02R_end_end" type="Spatial" parent="warrior/handIKL_end_end/elbowIKL_end_end/elbowIKR_end_end/handIKR_end_end/feetIKL_end_end/kneeIKL_end_end/feetIKR_end_end/kneeIKR_end_end/f_pinky02L_end_end/f_middle02L_end_end/f_index02L_end_end/thumb02L_end_end/head_end_end"]

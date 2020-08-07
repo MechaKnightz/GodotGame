@@ -7,13 +7,14 @@ var velocity = Vector3()
 var time_lived = 0
 
 export var SPEED = 30
-export var ACCELERATION = 10
+export var ACCELERATION = 30
 export var DEACCELERATION = 3
 export var TTL = 5
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass # Replace with function body.
+	pass
+	#todo start with velocity
 
 func _process(delta):
 	time_lived += delta
