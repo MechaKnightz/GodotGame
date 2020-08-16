@@ -24,6 +24,16 @@ config/name="GodotGame"
 run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Screen="*res://Screen.gd"
+
+[display]
+
+window/size/resizable=false
+window/size/borderless=true
+window/size/fullscreen=true
+
 [input]
 
 ui_end={
