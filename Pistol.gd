@@ -14,6 +14,7 @@ func _ready():
 func _fire():
 	
 	var proj = projectile.instance()
+	print(proj)
 	proj.transform = $ProjectileSpawnLocation.global_transform
 	get_node("/root/Main/WorldEnvironment").add_child(proj)
 

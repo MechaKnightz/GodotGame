@@ -1,20 +1,19 @@
-extends KinematicBody
-class_name Projectile
-# Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
+extends Spatial
+
 var velocity = Vector3()
 var time_lived = 0
 
-export var SPEED = 30
+export var SPEED = 3
 export var ACCELERATION = 30
 export var DEACCELERATION = 3
 export var TTL = 5
 
+var hit_something = false
+var BULLET_DAMAGE = 15
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	pass
-	#todo start with velocity
+	$Area.connect("body_entered", self, "collided")
 
 func _process(delta):
 	time_lived += delta
@@ -39,9 +38,14 @@ func _physics_process(delta):
 	
 	velocity.x = hv.x
 	velocity.z = hv.z
-	velocity = move_and_slide(velocity, Vector3(0, 1, 0))
+#	velocity = move_and_slide(velocity, Vector3(0, 1, 0))
+	global_translate(velocity * delta)
 	
 
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+func collided(body):
+	if hit_something == false:
+		if body.has_method("bullet_hit"):
+			body.bullet_hit(BULLET_DAMAGE, global_transform)
+
+	hit_something = true
+	queue_free()
