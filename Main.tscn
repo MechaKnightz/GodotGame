@@ -1,9 +1,9 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Gridmap/MeshLibrary.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://FallArea/Area.gd" type="Script" id=3]
-[ext_resource path="res://Bullet.tscn" type="PackedScene" id=4]
+[ext_resource path="res://RigidBody_hit_test.gd" type="Script" id=4]
 
 [sub_resource type="ProceduralSky" id=1]
 
@@ -17,6 +17,10 @@ ambient_light_energy = 0.33
 
 [sub_resource type="BoxShape" id=3]
 extents = Vector3( 38.2142, 1, 36.817 )
+
+[sub_resource type="BoxShape" id=4]
+
+[sub_resource type="CubeMesh" id=5]
 
 [node name="Main" type="Spatial"]
 
@@ -59,7 +63,17 @@ __meta__ = {
 "_editor_floor_": Vector3( 0, 4, 0 )
 }
 
-[node name="Bullet" parent="." instance=ExtResource( 4 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4, 0 )
-ACCELERATION = 10
+[node name="Cube" type="Spatial" parent="."]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 6 )
+
+[node name="RigidBody" type="RigidBody" parent="Cube"]
+script = ExtResource( 4 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Cube/RigidBody"]
+transform = Transform( 0.999995, 0, 0.0032114, 0, 1, 0, -0.0032114, 0, 0.999995, 0, 0, 0 )
+shape = SubResource( 4 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Cube/RigidBody"]
+mesh = SubResource( 5 )
+material/0 = null
 [connection signal="body_entered" from="WorldEnvironment/Area" to="WorldEnvironment/Area" method="_on_Area_body_entered"]

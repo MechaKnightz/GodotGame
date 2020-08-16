@@ -3,13 +3,13 @@ extends Spatial
 var velocity = Vector3()
 var time_lived = 0
 
-export var SPEED = 3
+export var SPEED = 15
 export var ACCELERATION = 30
 export var DEACCELERATION = 3
 export var TTL = 5
 
 var hit_something = false
-var BULLET_DAMAGE = 15
+var BULLET_DAMAGE = 2
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
@@ -38,7 +38,6 @@ func _physics_process(delta):
 	
 	velocity.x = hv.x
 	velocity.z = hv.z
-#	velocity = move_and_slide(velocity, Vector3(0, 1, 0))
 	global_translate(velocity * delta)
 	
 
