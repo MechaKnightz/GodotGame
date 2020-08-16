@@ -1,0 +1,99 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://assets/MajorMonoDisplay-Regular.ttf" type="DynamicFontData" id=1]
+[ext_resource path="res://assets/high-res-subway__edited.jpg" type="Texture" id=2]
+[ext_resource path="res://TitleScreen/theme.tres" type="Theme" id=3]
+[ext_resource path="res://TitleScreen/MainMenu.gd" type="Script" id=4]
+
+[sub_resource type="DynamicFont" id=1]
+size = 80
+font_data = ExtResource( 1 )
+
+[node name="MainMenu" type="TextureRect"]
+anchor_left = -0.00124016
+anchor_top = -0.000120601
+anchor_right = 0.99876
+anchor_bottom = 0.999879
+margin_left = 2.3811
+margin_top = 0.130249
+margin_right = 2.38123
+margin_bottom = 0.130371
+rect_clip_content = true
+texture = ExtResource( 2 )
+expand = true
+stretch_mode = 7
+script = ExtResource( 4 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 120
+custom_constants/margin_top = 80
+custom_constants/margin_left = 120
+custom_constants/margin_bottom = 80
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+margin_left = 120.0
+margin_top = 80.0
+margin_right = 769.0
+margin_bottom = 999.0
+size_flags_horizontal = 0
+alignment = 1
+
+[node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_top = 137.0
+margin_right = 649.0
+margin_bottom = 217.0
+size_flags_vertical = 14
+custom_fonts/font = SubResource( 1 )
+text = "Subway ARPG"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="MenuOptions" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
+margin_top = 221.0
+margin_right = 240.0
+margin_bottom = 874.0
+size_flags_horizontal = 0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+custom_constants/separation = 50
+alignment = 1
+
+[node name="Continue" type="Label" parent="MarginContainer/VBoxContainer/MenuOptions"]
+visible = false
+margin_top = 152.0
+margin_right = 649.0
+margin_bottom = 192.0
+theme = ExtResource( 3 )
+text = "Continue"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NewGame" type="Button" parent="MarginContainer/VBoxContainer/MenuOptions"]
+margin_top = 306.0
+margin_right = 240.0
+margin_bottom = 346.0
+mouse_default_cursor_shape = 2
+theme = ExtResource( 3 )
+custom_colors/font_color_hover = Color( 0.545098, 0.00392157, 0.133333, 1 )
+text = "New Game"
+
+[node name="Version" type="Label" parent="MarginContainer/VBoxContainer"]
+margin_top = 878.0
+margin_right = 649.0
+margin_bottom = 918.0
+theme = ExtResource( 3 )
+text = "ver: Pre-Alpha"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="MarginContainer/VBoxContainer/MenuOptions/NewGame" to="." method="_on_NewGame_pressed"]
