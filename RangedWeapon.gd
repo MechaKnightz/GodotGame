@@ -10,7 +10,7 @@ extends Weapon
 func _ready():
 	pass
 
-func _fire():
+func _fire(result: Vector3):
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

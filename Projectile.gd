@@ -3,7 +3,7 @@ extends Spatial
 var velocity = Vector3()
 var time_lived = 0
 
-export var SPEED = 15
+export var SPEED = 30
 export var ACCELERATION = 30
 export var DEACCELERATION = 3
 export var TTL = 5

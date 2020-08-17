@@ -10,16 +10,16 @@ var last_fired
 func _ready():
 	pass # Replace with function body.
 
-func _use():
+func _use(result: Vector3):
 	if last_fired == null:
 		last_fired = OS.get_system_time_msecs()
-		_fire()
+		_fire(result)
 	elif last_fired + cooldown < OS.get_system_time_msecs():
 		last_fired = OS.get_system_time_msecs()
-		_fire()
+		_fire(result)
 	pass
 
-func _fire():
+func _fire(result: Vector3):
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 #func _process(delta):

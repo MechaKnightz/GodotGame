@@ -21,20 +21,8 @@ _global_script_class_icons={
 [application]
 
 config/name="GodotGame"
-run/main_scene="res://TitleScreen/MainMenu.tscn"
+run/main_scene="res://Main.tscn"
 config/icon="res://icon.png"
-
-[autoload]
-
-Screen="*res://Screen.gd"
-Global="*res://Global.gd"
-
-[display]
-
-window/size/width=1920
-window/size/height=1080
-window/size/borderless=true
-window/size/fullscreen=true
 
 [input]
 

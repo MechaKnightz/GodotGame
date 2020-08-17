@@ -28,7 +28,8 @@ func _input(ev):
 		var directState = PhysicsServer.space_get_direct_state(camera.get_world().get_space())
 		var result = directState.intersect_ray(from, to, [self])
 		print(result)
-		$Pistol._use()
+		if ("position" in result):
+			$Pistol._use(result.position)
 
 func _physics_process(delta):
 	var dir = Vector3()
