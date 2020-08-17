@@ -21,8 +21,12 @@ _global_script_class_icons={
 [application]
 
 config/name="GodotGame"
-run/main_scene="res://Main.tscn"
+run/main_scene="res://TitleScreen/MainMenu.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Global="*res://Global.gd"
 
 [input]
 
