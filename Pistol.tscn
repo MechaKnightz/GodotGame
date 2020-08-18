@@ -16,4 +16,4 @@ mesh = ExtResource( 2 )
 material/0 = null
 
 [node name="ProjectileSpawnLocation" parent="." index="1"]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0134197, 1.01568, 2.09404 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0134197, 1.01568, 2.08665 )

@@ -27,7 +27,6 @@ func _input(ev):
 		var to = from + camera.project_ray_normal(ev.position) * RAY_LENGTH
 		var directState = PhysicsServer.space_get_direct_state(camera.get_world().get_space())
 		var result = directState.intersect_ray(from, to, [self])
-		print(result)
 		if ("position" in result):
 			$Pistol._use(result.position)
 

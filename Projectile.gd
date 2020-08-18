@@ -22,22 +22,13 @@ func _process(delta):
 
 func _physics_process(delta):
 	var dir = self.global_transform.basis.z
-	dir.y = 0
 	dir = dir.normalized()
-	
-	var hv = velocity
-	hv.y = 0
 	
 	var new_pos = dir * SPEED
 	var accel = DEACCELERATION
 	
-	if(dir.dot(hv) > 0):
-		accel = ACCELERATION
+	velocity = velocity.linear_interpolate(new_pos, accel * delta)
 	
-	hv = hv.linear_interpolate(new_pos, accel * delta)
-	
-	velocity.x = hv.x
-	velocity.z = hv.z
 	global_translate(velocity * delta)
 	
 
