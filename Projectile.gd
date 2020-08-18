@@ -3,8 +3,8 @@ extends Spatial
 var velocity = Vector3()
 var time_lived = 0
 
-export var SPEED = 30
-export var ACCELERATION = 30
+export var SPEED = 50
+export var ACCELERATION = 50
 export var DEACCELERATION = 3
 export var TTL = 5
 
@@ -21,7 +21,7 @@ func _process(delta):
 		queue_free()
 
 func _physics_process(delta):
-	var dir = self.global_transform.basis.z
+	var dir = -self.global_transform.basis.z
 	dir = dir.normalized()
 	
 	var new_pos = dir * SPEED
