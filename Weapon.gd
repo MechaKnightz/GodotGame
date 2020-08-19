@@ -19,6 +19,10 @@ func _use(result: Vector3):
 		_fire(result)
 	pass
 
+func _aim(rayPos):
+	pass
+	
+
 func _fire(result: Vector3):
 	pass
 # Called every frame. 'delta' is the elapsed time since the previous frame.

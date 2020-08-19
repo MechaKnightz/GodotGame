@@ -18,8 +18,12 @@ func _ready():
 	cameraTransform = camera.get_global_transform()
 
 func _process(delta):
-	if(Input.is_action_pressed("shoot")):
-		pass
+	var from = camera.project_ray_origin(get_viewport().get_mouse_position())
+	var to = from + camera.project_ray_normal(get_viewport().get_mouse_position()) * RAY_LENGTH
+	var directState = PhysicsServer.space_get_direct_state(camera.get_world().get_space())
+	var result = directState.intersect_ray(from, to, [self])
+	if ("position" in result):
+		$Pistol._aim(result.position)
 
 func _input(ev):
 	if ev is InputEventMouseButton and ev.is_action_pressed("shoot"):
