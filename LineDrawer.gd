@@ -29,7 +29,10 @@ func _process(delta):
 	update()
 
 func draw_line_3D(id, vector_a, vector_b, color, thickness):
-
+	
+	if Camera_Node == null :
+		Camera_Node = get_viewport().get_camera()
+	
 	for line in Lines:
 		if line.id == id:
 			line.color = color
