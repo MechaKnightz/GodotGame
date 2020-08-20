@@ -2,8 +2,9 @@
 
 [ext_resource path="res://assets/MajorMonoDisplay-Regular.ttf" type="DynamicFontData" id=1]
 [ext_resource path="res://assets/high-res-subway__edited.jpg" type="Texture" id=2]
-[ext_resource path="res://TitleScreen/theme.tres" type="Theme" id=3]
+[ext_resource path="res://assets/theme.tres" type="Theme" id=3]
 [ext_resource path="res://TitleScreen/MainMenu.gd" type="Script" id=4]
+
 
 [sub_resource type="DynamicFont" id=1]
 size = 80
@@ -42,14 +43,14 @@ __meta__ = {
 margin_left = 120.0
 margin_top = 80.0
 margin_right = 769.0
-margin_bottom = 519.0
+margin_bottom = 999.0
 size_flags_horizontal = 0
 alignment = 1
 
 [node name="Title" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_top = 17.0
+margin_top = 137.0
 margin_right = 649.0
-margin_bottom = 97.0
+margin_bottom = 217.0
 size_flags_vertical = 14
 custom_fonts/font = SubResource( 1 )
 text = "Subway ARPG"
@@ -58,9 +59,9 @@ __meta__ = {
 }
 
 [node name="MenuOptions" type="VBoxContainer" parent="MarginContainer/VBoxContainer"]
-margin_top = 101.0
+margin_top = 221.0
 margin_right = 240.0
-margin_bottom = 394.0
+margin_bottom = 874.0
 size_flags_horizontal = 0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.0
@@ -79,18 +80,18 @@ __meta__ = {
 }
 
 [node name="NewGame" type="Button" parent="MarginContainer/VBoxContainer/MenuOptions"]
-margin_top = 126.0
+margin_top = 306.0
 margin_right = 240.0
-margin_bottom = 166.0
+margin_bottom = 346.0
 mouse_default_cursor_shape = 2
 theme = ExtResource( 3 )
 custom_colors/font_color_hover = Color( 0.545098, 0.00392157, 0.133333, 1 )
 text = "New Game"
 
 [node name="Version" type="Label" parent="MarginContainer/VBoxContainer"]
-margin_top = 398.0
+margin_top = 878.0
 margin_right = 649.0
-margin_bottom = 438.0
+margin_bottom = 918.0
 theme = ExtResource( 3 )
 text = "ver: Pre-Alpha"
 __meta__ = {

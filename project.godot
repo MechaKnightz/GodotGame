@@ -29,6 +29,11 @@ config/icon="res://icon.png"
 Global="*res://Global.gd"
 LineDrawer="*res://LineDrawer.gd"
 
+[display]
+
+window/size/width=1920
+window/size/height=1080
+
 [input]
 
 ui_end={
@@ -67,4 +72,5 @@ shoot={
 quality/filters/anisotropic_filter_level=8
 quality/directional_shadow/size=16384
 quality/shadow_atlas/size=8192
+environment/default_clear_color=Color( 0.14902, 0.192157, 0.219608, 1 )
 quality/filters/msaa=4
