@@ -1,10 +1,12 @@
 [gd_scene load_steps=37 format=2]
 
 [ext_resource path="res://MiniCharacters Pack/fbx/Clothing.material" type="Material" id=1]
-[ext_resource path="res://Player.gd" type="Script" id=2]
+[ext_resource path="res://Game/Player.gd" type="Script" id=2]
 [ext_resource path="res://MiniCharacters Pack/fbx/Skin.material" type="Material" id=3]
 [ext_resource path="res://MiniCharacters Pack/fbx/Eyes_2.material" type="Material" id=4]
-[ext_resource path="res://Pistol.tscn" type="PackedScene" id=5]
+[ext_resource path="res://Game/Weapons/Pistol.tscn" type="PackedScene" id=5]
+
+
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.35474

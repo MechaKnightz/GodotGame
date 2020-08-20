@@ -1,8 +1,11 @@
 [gd_scene load_steps=4 format=2]
 
-[ext_resource path="res://RangedWeapon.tscn" type="PackedScene" id=1]
-[ext_resource path="res://pistol/pistol2.obj" type="ArrayMesh" id=2]
-[ext_resource path="res://Pistol.gd" type="Script" id=3]
+[ext_resource path="res://Game/Weapons/RangedWeapon.tscn" type="PackedScene" id=1]
+[ext_resource path="res://assets/pistol/pistol2.obj" type="ArrayMesh" id=2]
+[ext_resource path="res://Game/Weapons/Pistol.gd" type="Script" id=3]
+
+
+
 
 [node name="Pistol" instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )

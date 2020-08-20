@@ -1,11 +1,11 @@
-extends "res://RangedWeapon.gd"
+extends "res://Game/Weapons/RangedWeapon.gd"
 
 
 # Declare member variables here. Examples:
 # var a = 2
 # var b = "text"
 
-var projectile = preload("res://Bullet.tscn")
+var projectile = preload("res://Game/Weapons/Bullet.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready():

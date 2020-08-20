@@ -12,7 +12,7 @@ _global_script_classes=[ {
 "base": "Spatial",
 "class": "Weapon",
 "language": "GDScript",
-"path": "res://Weapon.gd"
+"path": "res://Game/Weapons/Weapon.gd"
 } ]
 _global_script_class_icons={
 "Weapon": ""
@@ -21,12 +21,11 @@ _global_script_class_icons={
 [application]
 
 config/name="GodotGame"
-run/main_scene="res://TitleScreen/MainMenu.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://TitleScreen/TitleScreen.tscn"
+config/icon="res://assets/icon.png"
 
 [autoload]
 
-Global="*res://Global.gd"
 LineDrawer="*res://LineDrawer.gd"
 
 [display]
