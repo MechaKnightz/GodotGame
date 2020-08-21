@@ -1,6 +1,5 @@
 extends KinematicBody
 
-
 # Declare member variables here.
 var gravity = ProjectSettings.get_setting("physics/3d/default_gravity") * ProjectSettings.get_setting("physics/3d/default_gravity_vector").y
 var velocity = Vector3()
@@ -12,8 +11,16 @@ var ACCELERATION = 3
 var DEACCELERATION = 10
 const RAY_LENGTH = 1000
 
-# Called when the node enters the scene tree for the first time.
+export var pistolPos: Vector3
+
+#what weapon to preload
+var weaponScene: PackedScene = preload("res://Game/Weapons/Pistol.tscn")
+var weapon: Weapon
+
 func _ready():
+	weapon = weaponScene.instance()
+	weapon.translation = pistolPos
+	add_child(weapon)
 	camera = get_node("../CameraHolder/Camera")
 	cameraTransform = camera.get_global_transform()
 
@@ -23,7 +30,8 @@ func _process(delta):
 	var directState = PhysicsServer.space_get_direct_state(camera.get_world().get_space())
 	var result = directState.intersect_ray(from, to, [self])
 	if ("position" in result):
-		$Pistol._aim(result.position)
+		weapon._aim(result.position)
+		#$Pistol.aim(result.position)
 
 func _input(ev):
 	if ev is InputEventMouseButton and ev.is_action_pressed("shoot"):
@@ -32,7 +40,8 @@ func _input(ev):
 		var directState = PhysicsServer.space_get_direct_state(camera.get_world().get_space())
 		var result = directState.intersect_ray(from, to, [self])
 		if ("position" in result):
-			$Pistol._use(result.position)
+			weapon._use(result.position)
+			#$Pistol._use(result.position)
 
 func _physics_process(delta):
 	var dir = Vector3()

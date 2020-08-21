@@ -4,11 +4,8 @@
 [ext_resource path="res://assets/pistol/pistol2.obj" type="ArrayMesh" id=2]
 [ext_resource path="res://Game/Weapons/Pistol.gd" type="Script" id=3]
 
-
-
-
 [node name="Pistol" instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0 )
+transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0, 0 )
 script = ExtResource( 3 )
 weapon_name = "Pistol"
 cooldown = 1000

@@ -4,7 +4,7 @@ var velocity = Vector3()
 var time_lived = 0
 
 export var SPEED = 50
-export var ACCELERATION = 50
+export var ACCELERATION = 200
 export var DEACCELERATION = 3
 export var TTL = 5
 

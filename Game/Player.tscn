@@ -1,12 +1,9 @@
-[gd_scene load_steps=37 format=2]
+[gd_scene load_steps=36 format=2]
 
 [ext_resource path="res://MiniCharacters Pack/fbx/Clothing.material" type="Material" id=1]
 [ext_resource path="res://Game/Player.gd" type="Script" id=2]
 [ext_resource path="res://MiniCharacters Pack/fbx/Skin.material" type="Material" id=3]
 [ext_resource path="res://MiniCharacters Pack/fbx/Eyes_2.material" type="Material" id=4]
-[ext_resource path="res://Game/Weapons/Pistol.tscn" type="PackedScene" id=5]
-
-
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.35474
@@ -6400,9 +6397,7 @@ node_connections = [ "output", 0, "Blend2", "Blend2", 0, "Idle", "Blend2", 1, "A
 
 [node name="Player" type="KinematicBody"]
 script = ExtResource( 2 )
-
-[node name="Pistol" parent="." instance=ExtResource( 5 )]
-transform = Transform( 0.1, 0, 0, 0, 0.1, 0, 0, 0, 0.1, 0, 0.860785, 0.489434 )
+pistolPos = Vector3( 0, 1, 0.5 )
 
 [node name="CollisionCapsule" type="CollisionShape" parent="."]
 transform = Transform( 1, 0, 0, 0, -1.62921e-07, -1, 0, 1, -1.62921e-07, 0, 0.819969, 0 )

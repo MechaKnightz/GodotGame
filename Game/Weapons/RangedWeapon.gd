@@ -12,14 +12,10 @@ func _ready():
 	pass
 
 func _aim(rayPos):
-	var from = $ProjectileSpawnLocation.global_transform.origin
-	var directState = PhysicsServer.space_get_direct_state(self.get_parent().get_world().get_space())
-	var result = directState.intersect_ray(from, rayPos, [self])
-	
-	if ("position" in result):
-		LineDrawer.remove_line(id)
-		LineDrawer.draw_line_3D(id, $ProjectileSpawnLocation.global_transform.origin, result.position,
-		 Color(0, 255, 0, 1), 1.0)
+	#$Laser.is_casting = true
+	#$Laser.translation = $ProjectileSpawnLocation.translation
+	#$Laser.cast_to = rayPos
+	pass
 
 func _fire(result: Vector3):
 	pass
