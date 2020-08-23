@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://Gridmap/MeshLibrary.tres" type="MeshLibrary" id=1]
 [ext_resource path="res://Game/Player.tscn" type="PackedScene" id=2]
 [ext_resource path="res://FallArea/Area.gd" type="Script" id=3]
+[ext_resource path="res://InGameMenu/InGameMenu.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Game/GUI.gd" type="Script" id=5]
 
 [sub_resource type="ProceduralSky" id=1]
 sky_top_color = Color( 0.0235294, 0.0705882, 0.0941176, 1 )
@@ -62,4 +64,10 @@ __meta__ = {
 "_editor_clip_": 0,
 "_editor_floor_": Vector3( 0, 4, 0 )
 }
+
+[node name="GUI" type="Node" parent="."]
+script = ExtResource( 5 )
+
+[node name="InGameMenu" parent="GUI" instance=ExtResource( 4 )]
+visible = false
 [connection signal="body_entered" from="WorldEnvironment/Area" to="WorldEnvironment/Area" method="_on_Area_body_entered"]
